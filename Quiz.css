@@ -111,7 +111,7 @@
     position: absolute;
     position: absolute;
     top: 7px;
-    left: 75%
+    left: 73%;
 }
 
 #page2 {
@@ -143,12 +143,14 @@
     text-decoration: none;
     color: black;
 }
-#page2 .mid{
+
+#page2 .mid {
     text-align: center;
     padding-top: 50px;
-   text-align: center;
+    text-align: center;
 }
-#page2 .mid h5{
+
+#page2 .mid h5 {
     margin-top: 20px;
     font-size: 20px;
     display: flex;
@@ -166,22 +168,26 @@
     border-radius: 20px;
 }
 
-#page2 .mid a:first-of-type{
+#page2 .mid a:first-of-type {
     background-color: blueviolet;
     color: white;
 }
-#page2 .mid a:nth-of-type(2){
+
+#page2 .mid a:nth-of-type(2) {
     background-color: rosybrown;
     color: white;
 }
-#page2 .mid a:last-of-type{
+
+#page2 .mid a:last-of-type {
     background-color: hotpink;
     color: white;
 }
-#page2 .mid h1{
+
+#page2 .mid h1 {
     margin-top: 20px;
 }
-#page2 .mid button{
+
+#page2 .mid button {
     height: 42px;
     width: 152px;
     font-size: 23px;
@@ -191,13 +197,16 @@
     cursor: pointer;
     margin-top: 20px;
 }
-.select{
+
+.select {
     border: 5px solid green;
 }
-#page2 .mid label{
+
+#page2 .mid label {
     cursor: pointer;
 }
-#page3{
+
+#page3 {
     display: none;
     height: 100vh;
     /* justify-content: center; */
@@ -205,7 +214,8 @@
     flex-direction: column;
     align-items: center;
 }
-#page3 .header p{
+
+#page3 .header p {
     background-color: white;
     height: 50px;
     width: 50px;
@@ -214,7 +224,8 @@
     border-radius: 50%;
     padding: 5px 0
 }
-#page3 .ques{
+
+#page3 .ques {
     height: 80vh;
     background-color: white;
     width: 80vw;
@@ -223,7 +234,8 @@
     justify-content: center;
     align-items: center;
 }
-#page3 .result{
+
+#page3 .result {
     display: none;
     height: 73vh;
     width: 73vw;
@@ -232,13 +244,15 @@
     align-items: center;
     flex-direction: column;
 }
-#page3 .yourscore p{
+
+#page3 .yourscore p {
     display: none;
     font-size: 51px;
     margin: 40px 0;
     color: green;
 }
-#page2 .yourdata{
+
+#page2 .yourdata {
     height: 80vh;
     background-color: lightcoral;
     display: none;
@@ -246,21 +260,38 @@
     justify-content: center;
     align-items: center;
 }
-#page2 .yourdata .info{
+
+#page2 .yourdata .info {
     height: 50px;
     display: flex;
     margin: 20px 0;
 }
-#page2 .yourdata .info h3{
+
+#page2 .yourdata .info h3 {
     background-color: wheat;
     padding: 20px 100px;
 }
+
 #page2 .yourdata .scorecard {
     display: flex;
 }
-#page2 .yourdata .scorecard h3{
+
+#page2 .yourdata .scorecard h3 {
     padding: 20px 100px;
 }
-.topic{
+
+.topic {
     text-transform: uppercase;
+}
+
+#page1 .header .logout {
+    display: none;
+}
+
+#page1 .header .logout button {
+    height: 31px;
+    width: 78px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }

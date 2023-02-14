@@ -9,13 +9,25 @@ let input = document.querySelector(".username input")
 let take = document.querySelector(".take")
 let ankor = document.querySelectorAll(".mid a")
 let page2 = document.querySelector("#page2")
-
+let logout = document.querySelector(".logout")
+console.log(logout)
 
 function checkusername() {
     if (sessionStorage.getItem("user")) {
         user.style.display = "none"
         head.innerHTML = sessionStorage.getItem("user")
+        logout.style.display="block"
     }
+}
+
+logout.onclick=()=>{
+    deleteall()
+    location.reload()
+}
+
+
+function deleteall(){
+    sessionStorage.clear()
 }
 
 
@@ -36,6 +48,7 @@ create.onclick = () => {
         user.style.display = "none"
         take.style.display = "none"
         checkusername()
+        logout.style.display="block"
     }
 }
 quit.onclick = () => {
@@ -146,6 +159,7 @@ submit.addEventListener("click", () => {
     const clickans = checkedanns()
     if (clickans === quiz[questioncount].ans) {
         score++
+        sessionStorage.setItem("score",score)
     }
     diselectall()
     questioncount++
@@ -193,7 +207,6 @@ let timedone = document.querySelector(".timer")
 
 getresult .onclick=()=>{
     scoreshow.style.display="block"
-    sessionStorage.setItem("score",score)
     let saved = sessionStorage.getItem("score")
     scoreshow.innerHTML= saved + " Out Of 10 " 
 }
@@ -210,10 +223,5 @@ scorecard.onclick=(e)=>{
     scorediv.style.display="flex"
     topic.innerHTML= sessionStorage.getItem("topic")
     scoredone.innerHTML=  sessionStorage.getItem("score") + " Out of 10"
-    if(sessionStorage.getItem("time") < 60){
-        timedone.innerHTML=sessionStorage.getItem("time")  + "seconds"
-    }
-    else{
-        timedone.innerHTML=sessionStorage.getItem("time")  + " Minutes"
-    }
+    timedone.innerHTML=sessionStorage.getItem("time")  + "seconds"
 }
