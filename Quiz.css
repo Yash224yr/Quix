@@ -223,3 +223,44 @@
     justify-content: center;
     align-items: center;
 }
+#page3 .result{
+    display: none;
+    height: 73vh;
+    width: 73vw;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#page3 .yourscore p{
+    display: none;
+    font-size: 51px;
+    margin: 40px 0;
+    color: green;
+}
+#page2 .yourdata{
+    height: 80vh;
+    background-color: lightcoral;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#page2 .yourdata .info{
+    height: 50px;
+    display: flex;
+    margin: 20px 0;
+}
+#page2 .yourdata .info h3{
+    background-color: wheat;
+    padding: 20px 100px;
+}
+#page2 .yourdata .scorecard {
+    display: flex;
+}
+#page2 .yourdata .scorecard h3{
+    padding: 20px 100px;
+}
+.topic{
+    text-transform: uppercase;
+}

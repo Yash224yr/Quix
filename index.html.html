@@ -49,7 +49,7 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Quiz</a></li>
-                    <li><a href="">Score</a></li>
+                    <li><a class="data" href="">Score</a></li>
                 </ul>
             </div>
             <div class="save">
@@ -69,13 +69,24 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
+        <div class="yourdata">
+            <h1>Total Scores </h1>
+            <div class="info">
+                <h3>Topic</h3>
+                <h3>Score</h3>
+                <h3>Time Taken</h3>
+            </div>
+            <div class="scorecard">
+                <h3 class="topic"></h3>
+                <h3 class="outof"></h3>
+                <h3 class="timer"></h3>
+            </div>
+        </div>
     </div>
     <div id="page3">
         <div class="header">
-
             <h1></h1>
             <p><span>0</span></p>
-
         </div>
         <div class="ques">
             <h2 class="question">Question comes here ?</h2>
@@ -100,136 +111,22 @@
             <button type="submit">Submit</button>
         </div>
 
+        <div class="result">
+            <h1>Well! Done You Have Completed All the question</h1>
+            <div class="yourscore">
+                <p></p>
+            </div>
+            <div class="show">
+                <button>Get Result</button>
+                <button>Play Again</button>
+                <button>Quit</button>
+            </div>
+
+        </div>
+
     </div>
 
-    <script>
-
-
-        let user = document.querySelector(".user button")
-        let start = document.querySelector(".knowledge button")
-        let create = document.querySelector(".btn button:first-of-type")
-        let quit = document.querySelector(".btn button:last-of-type")
-        let head = document.querySelector(".user h1")
-        let input = document.querySelector(".username input")
-        let take = document.querySelector(".take")
-        let ankor = document.querySelectorAll(".mid a")
-        let page2 = document.querySelector("#page2")
-        let score = 0;
-
-
-        function checkusername(){
-            if(localStorage.getItem("user")){
-                user.style.display="none"
-                head.innerHTML=localStorage.getItem("user")
-            }
-        }
-
-
-        checkusername()
-
-        user.onclick = () => {
-            take.style.display = "block"
-
-        }
-        create.onclick = () => {
-            if (input.value.length === 0) {
-                alert("Username can't be empty")
-            }
-            else {
-              localStorage.setItem("user",input.value)
-              let save = localStorage.getItem("user")
-              head.innerHTML=save
-                user.style.display = "none"
-                take.style.display = "none"
-            checkusername()
-            }
-        }
-        quit.onclick = () => {
-            take.style.display = "none"
-
-        }
-        start.onclick = () => {
-            // if (input.value.length === 0) {
-            //     alert("Please create Your Username")
-            // }
-            // else{
-            document.querySelector("#page1").style.display = "none"
-            document.querySelector("#page2").style.display = "block"
-            document.querySelector("#page2 .save h1").innerHTML = localStorage.getItem("user")
-            // }
-        }
-
-        const form = document.querySelector("#myForm");
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const selectedOption = document.querySelector("input[name='select']:checked").value;
-            console.log(selectedOption)
-            if (selectedOption === "Music") {
-                page2.style.display = "none"
-                page3.style.display = "flex"
-                document.querySelector("#page3 .header h1").innerHTML = selectedOption + " " + "Quiz"
-                timer()
-            }
-            else if (selectedOption === "Modern Art") {
-                page2.style.display = "none"
-                page3.style.display = "flex"
-                document.querySelector("#page3 .header h1").innerHTML = selectedOption + " " + "Quiz"
-                timer()
-            }
-            else {
-                page2.style.display = "none"
-                page3.style.display = "flex"
-                document.querySelector("#page3 .header h1").innerHTML = selectedOption + " " + "Quiz"
-                timer()
-            }
-        });
-
-
-        function timer() {
-            setInterval(() => {
-                let time = document.querySelector("#page3 .header p span")
-                time.innerHTML = Number(time.innerHTML) + 1
-            }, 1000)
-        }
-
-        const quiz = [
-            {
-                question: "what 2 + 2 ?",
-                a: 4,
-                b: 22,
-                c: 6,
-                d: 55,
-            },
-            {
-                question: "what 44/2 ?",
-                a: 22,
-                b: 2,
-                c: 88,
-                d: 55,
-            }
-        ]
-
-        let question = document.querySelector(".question")
-        let option1 = document.querySelector("#option1 ")
-        let option2 = document.querySelector("#option2 ")
-        let option3 = document.querySelector("#option3 ")
-        let submit = document.querySelector(".ques button")
-        let questioncount = 0
-        function loadquestion() {
-            question.innerHTML = quiz[questioncount].question
-            option1.innerHTML = quiz[questioncount].a
-            option2.innerHTML = quiz[questioncount].b
-            option3.innerHTML = quiz[questioncount].c
-            option4.innerHTML = quiz[questioncount].d
-        }
-
-        // submit.addEventListener("click",()=>{
-        //     questioncount++
-        //     if()
-        // })
-
-        loadquestion()
-    </script>
+    <script src="Quiz.js"></script>
 </body>
 
 </html>
