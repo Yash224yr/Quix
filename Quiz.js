@@ -66,7 +66,7 @@ start.onclick = () => {
         document.querySelector("#page2 .save h1").innerHTML = sessionStorage.getItem("user")
     }
     else {
-        alert("Enter Your Username First")
+        alert("Create Your Username")
     }
 }
 
