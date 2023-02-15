@@ -17,7 +17,6 @@ function checkusername() {
         user.style.display = "none"
         head.innerHTML = sessionStorage.getItem("user")
         logout.style.display = "block"
-
     }
 }
 
@@ -303,6 +302,20 @@ submit.addEventListener("click", (event) => {
         }
         diselectall()
         questioncount++
+        shownextquestion()
+       
+        stop()
+        if (time.innerHTML >= 0) {
+            time.innerHTML = 15
+            timer()
+        }
+    }
+    else {
+        swal("Oops!", "Select Any First", "error");
+    }
+
+
+    function shownextquestion(){
         if (sessionStorage.getItem("topic") === "Music") {
             if (questioncount < musicquiz.length) {
                 loadquestion1()
@@ -331,9 +344,6 @@ submit.addEventListener("click", (event) => {
             }
         }
     }
-    else {
-        swal("Oops!", "Select Any First", "error"); 
-    }
 
 
 })
@@ -352,16 +362,47 @@ function diselectoption() {
 
 function timer() {
     let stop = setInterval(() => {
-
-        if (questioncount < quiz.length) {
-            time.innerHTML = Number(time.innerHTML) + 1
-            sessionStorage.setItem("time", time.innerHTML)
+        if (questioncount < 5) {
+            if (time.innerHTML <= 0) {
+                questioncount++
+                time.innerHTML = "15"
+                if (sessionStorage.getItem("topic") === "Music") {
+                    if (questioncount < musicquiz.length) {
+                        loadquestion1()
+                    }
+                    else {
+                        document.querySelector(".ques").style.display = "none"
+                        document.querySelector("#page3 .result").style.display = "flex"
+                    }
+                }
+                if (sessionStorage.getItem("topic") === "Coding") {
+                    if (questioncount < quiz.length) {
+                        loadquestion()
+                    }
+                    else {
+                        document.querySelector(".ques").style.display = "none"
+                        document.querySelector("#page3 .result").style.display = "flex"
+                    }
+                }
+                if (sessionStorage.getItem("topic") === "Modern Art") {
+                    if (questioncount < modernartquiz.length) {
+                        loadquestion2()
+                    }
+                    else {
+                        document.querySelector(".ques").style.display = "none"
+                        document.querySelector("#page3 .result").style.display = "flex"
+                    }
+                }
+            }
+            else {
+                time.innerHTML = Number(time.innerHTML) - 1
+            }
         }
         else {
             time.innerHTML = "0"
             clearInterval(stop)
-
         }
+
     }, 1000)
 
 }
@@ -394,6 +435,9 @@ home.onclick = () => {
     page3.style.display = "none"
     diselectoption()
 }
+function stop() {
+    clearInterval(stop)
+}
 
 
 scorecard.onclick = (e) => {
@@ -408,8 +452,5 @@ scorecard.onclick = (e) => {
     }
     else {
         scoredone.innerHTML = "0 out Of 5"
-    }
-    if (sessionStorage.getItem("time")) {
-        timedone.innerHTML = sessionStorage.getItem("time") + " seconds"
     }
 }
