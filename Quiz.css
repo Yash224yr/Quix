@@ -412,51 +412,130 @@
     margin-top: 20px;
 }
 
-@media all and (max-width:900px){
-    #page1 .take{
+@media all and (max-width:1250px) {
+    #page2 .header {
+        justify-content: center;
+    }
+
+    #page2 .logout button {
+        margin-left: 20px;
+    }
+}
+
+
+@media all and (max-width:900px) {
+    #page1 .take {
         left: 38%;
     }
+
     #page1 .mid .knowledge {
         width: 50%;
         align-items: center;
         justify-content: center;
     }
-    #page1 .mid .knowledge button{
+
+    #page1 .mid .knowledge button {
         margin-top: 20px;
+    }
+
+    #page3 .header {
+        justify-content: space-evenly;
+    }
+
+    #page3 .ques button {
+        margin-top: 20px;
+    }
+
+    #page3 .result h1 {
+        text-align: center;
+    }
+
+    #page2 .yourdata .info h3 {
+        padding: 10px 80px;
+    }
+
+    #page2 .yourdata .scorecard h3 {
+        padding: 10px 80px;
     }
 }
 
 @media all and (max-width:725px) {
-   
+
     #page1 .image {
         height: 250px;
         width: 250px;
     }
+
     #page1 .mid .right {
         width: 50%;
     }
+
     #page1 .knowledge h1 {
         width: 196px;
     }
-    #page1 .mid .knowledge button{
+
+    #page1 .mid .knowledge button {
         margin-top: 20px;
+    }
+
+    #page2 .header ul li {
+        margin: 8px;
+    }
+
+    #page3 .ques h2 {
+        width: 321px;
+    }
+
+    #page2 .yourdata .info h3 {
+        padding: 10px 40px;
+    }
+
+    #page2 .yourdata .scorecard h3 {
+        padding: 10px 40px;
+    }
+    #page2 .logout button {
+        margin-left: 5px;
     }
 }
 
 
-    
 
 @media all and (max-width:525px) {
     #page1 .image {
         height: 200px;
         width: 200px;
     }
+
     #page1 .knowledge h1 {
         width: 156px;
     }
-    #page1 .take{
+
+    #page1 .take {
         left: 28%;
     }
+
+    #page3 .ques button {
+        margin-top: 20px;
+    }
+
+    #page3 .show {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    #page3 .show button {
+        margin-top: 10px;
+    }
+    #page2 .yourdata .info h3 {
+        padding: 10px 20px;
+    }
+
+    #page2 .yourdata .scorecard h3 {
+        padding: 10px 20px;
+    }
+
 }
 
 
@@ -465,18 +544,40 @@
         height: 170px;
         width: 170px;
     }
+
+    #page1 .header {
+        justify-content: center;
+    }
+
     #page1 .knowledge h1 {
         width: 140px;
         font-size: 20px;
     }
-    #page1 .mid .knowledge button{
+
+    #page1 .mid .knowledge button {
         width: 139px;
     }
-    #page1 .header{
-        justify-content: space-evenly;
-    }
-    #page1 .take{
+
+    #page1 .take {
         left: 21%;
+    }
+
+    #page1 .header .logout button {
+        margin-left: 5px;
+    }
+    #page2 .yourdata .info h3 {
+        padding: 10px 10px;
+    }
+
+    #page2 .yourdata .scorecard h3 {
+        padding: 10px 10px;
+    }
+    #page2 .yourdata .info h3 {
+        padding: 10px 5px;
+    }
+
+    #page2 .yourdata .scorecard h3 {
+        padding: 10px 5px;
     }
 }
 
@@ -486,11 +587,13 @@
         height: 150px;
         width: 150px;
     }
+
     #page1 .knowledge h1 {
         width: 100px;
         font-size: 20px;
     }
-    #page1 .mid .knowledge button{
+
+    #page1 .mid .knowledge button {
         width: 112px;
     }
 }
