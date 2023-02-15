@@ -281,41 +281,61 @@ function checkedanns() {
 
 
 
-submit.addEventListener("click", () => {
+submit.addEventListener("click", (event) => {
     const clickans = checkedanns()
-    if (clickans === quiz[questioncount].ans) {
-        score++
-        sessionStorage.setItem("score", score)
-    }
-    diselectall()
-    questioncount++
-    if (sessionStorage.getItem("topic") === "Music") {
-        if (questioncount < musicquiz.length) {
-            loadquestion1()
-        }
-        else {
-            document.querySelector(".ques").style.display = "none"
-            document.querySelector("#page3 .result").style.display = "flex"
+
+    let radios = document.querySelectorAll(".answer")
+    let isChecked = false;
+
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            isChecked = true;
+            break;
+
         }
     }
-    if (sessionStorage.getItem("topic") === "Coding") {
-        if (questioncount < quiz.length) {
-            loadquestion()
+
+
+    if (isChecked === true) {
+        if (clickans === quiz[questioncount].ans) {
+            score++
+            sessionStorage.setItem("score", score)
         }
-        else {
-            document.querySelector(".ques").style.display = "none"
-            document.querySelector("#page3 .result").style.display = "flex"
+        diselectall()
+        questioncount++
+        if (sessionStorage.getItem("topic") === "Music") {
+            if (questioncount < musicquiz.length) {
+                loadquestion1()
+            }
+            else {
+                document.querySelector(".ques").style.display = "none"
+                document.querySelector("#page3 .result").style.display = "flex"
+            }
+        }
+        if (sessionStorage.getItem("topic") === "Coding") {
+            if (questioncount < quiz.length) {
+                loadquestion()
+            }
+            else {
+                document.querySelector(".ques").style.display = "none"
+                document.querySelector("#page3 .result").style.display = "flex"
+            }
+        }
+        if (sessionStorage.getItem("topic") === "Modern Art") {
+            if (questioncount < modernartquiz.length) {
+                loadquestion2()
+            }
+            else {
+                document.querySelector(".ques").style.display = "none"
+                document.querySelector("#page3 .result").style.display = "flex"
+            }
         }
     }
-    if (sessionStorage.getItem("topic") === "Modern Art") {
-        if (questioncount < modernartquiz.length) {
-            loadquestion2()
-        }
-        else {
-            document.querySelector(".ques").style.display = "none"
-            document.querySelector("#page3 .result").style.display = "flex"
-        }
+    else {
+        swal("Oops!", "Select Any First", "error"); 
     }
+
+
 })
 
 function diselectall() {
@@ -323,10 +343,10 @@ function diselectall() {
         currentans.checked = false;
     })
 }
-function diselectoption(){
+function diselectoption() {
     let allinpt = document.querySelectorAll("#page2 .mid input")
-    allinpt.forEach((curren)=>{
-        curren.checked=false;
+    allinpt.forEach((curren) => {
+        curren.checked = false;
     })
 }
 
@@ -360,7 +380,13 @@ let timedone = document.querySelector(".timer")
 getresult.onclick = () => {
     scoreshow.style.display = "block"
     let saved = sessionStorage.getItem("score")
-    scoreshow.innerHTML = saved + " Out Of 5 "
+    if (sessionStorage.getItem("score")) {
+        scoreshow.innerHTML = saved + " Out Of 5 "
+    }
+    else {
+        scoreshow.innerHTML = "0 out Of 5"
+    }
+
 }
 
 home.onclick = () => {
@@ -374,14 +400,16 @@ scorecard.onclick = (e) => {
     e.preventDefault()
     document.querySelector("#page2 .mid").style.display = "none"
     scorediv.style.display = "flex"
-    if(sessionStorage.getItem("topic")){
+    if (sessionStorage.getItem("topic")) {
         topic.innerHTML = sessionStorage.getItem("topic")
     }
-    if(sessionStorage.getItem("score")){
+    if (sessionStorage.getItem("score")) {
         scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
     }
-    if(sessionStorage.getItem("time")){
-    timedone.innerHTML = sessionStorage.getItem("time") + " seconds"
-
+    else {
+        scoredone.innerHTML = "0 out Of 5"
+    }
+    if (sessionStorage.getItem("time")) {
+        timedone.innerHTML = sessionStorage.getItem("time") + " seconds"
     }
 }
