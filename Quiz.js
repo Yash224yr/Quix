@@ -74,6 +74,9 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
     const selectedOption = document.querySelector("input[name='select']:checked").value;
     sessionStorage.setItem("topic", selectedOption)
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+    sessionStorage.setItem("date",formattedDate)
     if (selectedOption === "Music") {
         page2.style.display = "none"
         page3.style.display = "flex"
@@ -314,7 +317,7 @@ submit.addEventListener("click", (event) => {
     }
 
 
-    function shownextquestion(){
+    function shownextquestion() {
         if (sessionStorage.getItem("topic") === "Music") {
             if (questioncount < musicquiz.length) {
                 loadquestion1()
@@ -404,7 +407,7 @@ function timer() {
             stop()
         }
 
-    },1000)
+    }, 1000)
 
 }
 
@@ -454,4 +457,6 @@ scorecard.onclick = (e) => {
     else {
         scoredone.innerHTML = "0 out Of 5"
     }
+    timedone.innerHTML= sessionStorage.getItem("date")
 }
+
