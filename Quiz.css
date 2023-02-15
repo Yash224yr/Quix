@@ -190,10 +190,12 @@
     margin-top: 20px;
     color: darkred;
 }
-#page2 .mid h2{
+
+#page2 .mid h2 {
     margin: 31px;
     font-size: 40px
 }
+
 #page2 .mid button {
     height: 42px;
     width: 152px;
@@ -215,7 +217,7 @@
     margin-top: 20px;
 }
 
-#page2 .mid label:first-of-type{
+#page2 .mid label:first-of-type {
     background-color: blue;
     color: white;
     display: inline-block;
@@ -225,7 +227,7 @@
     border-radius: 20px;
 }
 
-#page2 .mid label:nth-of-type(2){
+#page2 .mid label:nth-of-type(2) {
     background-color: palevioletred;
     color: white;
     display: inline-block;
@@ -234,7 +236,8 @@
     padding: 7px 0;
     border-radius: 20px;
 }
-#page2 .mid  label:last-of-type{
+
+#page2 .mid label:last-of-type {
     background-color: peru;
     color: white;
     display: inline-block;
@@ -262,23 +265,26 @@
     border-radius: 50%;
     padding: 7px 0
 }
-#page3 .header h1{
+
+#page3 .header h1 {
     color: antiquewhite;
 }
 
 #page3 .ques {
     height: 80vh;
-   background-color: bisque;
+    background-color: bisque;
     width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#page3 .ques h2{
+
+#page3 .ques h2 {
     width: 500px;
     text-align: center;
 }
+
 #page3 .result {
     display: none;
     height: 73vh;
@@ -316,13 +322,14 @@
     padding: 15px 100px;
 }
 
-#page2 .logout  button{
+#page2 .logout button {
     height: 31px;
     width: 78px;
     background-color: red;
     color: white;
     cursor: pointer;
 }
+
 #page2 .yourdata .scorecard {
     display: flex;
 }
@@ -346,15 +353,18 @@
     color: white;
     cursor: pointer;
 }
-#page3 .ques ul{
+
+#page3 .ques ul {
     list-style: none;
     margin: 11px 0;
     font-size: 30px
 }
-#page3 .ques label{
+
+#page3 .ques label {
     cursor: pointer;
 }
-#page3 .ques button{
+
+#page3 .ques button {
     height: 41px;
     width: 114px;
     background-color: black;
@@ -363,10 +373,12 @@
     border: 2px solid forestgreen;
     cursor: pointer;
 }
-#page3 .result{
+
+#page3 .result {
     background-color: plum;
 }
-#page3 .show button:first-of-type{
+
+#page3 .show button:first-of-type {
     height: 41px;
     width: 114px;
     background-color: black;
@@ -375,7 +387,8 @@
     cursor: pointer;
     font-size: 15px;
 }
-#page3 .show button:nth-of-type(2){
+
+#page3 .show button:nth-of-type(2) {
     height: 41px;
     width: 114px;
     background-color: blue;
@@ -384,7 +397,8 @@
     cursor: pointer;
     font-size: 15px;
 }
-#page3 .show button:last-of-type{
+
+#page3 .show button:last-of-type {
     height: 41px;
     width: 114px;
     background-color: red;
@@ -393,6 +407,90 @@
     cursor: pointer;
     font-size: 15px;
 }
-#page3 .show{
+
+#page3 .show {
     margin-top: 20px;
+}
+
+@media all and (max-width:900px){
+    #page1 .take{
+        left: 38%;
+    }
+    #page1 .mid .knowledge {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    #page1 .mid .knowledge button{
+        margin-top: 20px;
+    }
+}
+
+@media all and (max-width:725px) {
+   
+    #page1 .image {
+        height: 250px;
+        width: 250px;
+    }
+    #page1 .mid .right {
+        width: 50%;
+    }
+    #page1 .knowledge h1 {
+        width: 196px;
+    }
+    #page1 .mid .knowledge button{
+        margin-top: 20px;
+    }
+}
+
+
+    
+
+@media all and (max-width:525px) {
+    #page1 .image {
+        height: 200px;
+        width: 200px;
+    }
+    #page1 .knowledge h1 {
+        width: 156px;
+    }
+    #page1 .take{
+        left: 28%;
+    }
+}
+
+
+@media all and (max-width:450px) {
+    #page1 .image {
+        height: 170px;
+        width: 170px;
+    }
+    #page1 .knowledge h1 {
+        width: 140px;
+        font-size: 20px;
+    }
+    #page1 .mid .knowledge button{
+        width: 139px;
+    }
+    #page1 .header{
+        justify-content: space-evenly;
+    }
+    #page1 .take{
+        left: 21%;
+    }
+}
+
+
+@media all and (max-width:360px) {
+    #page1 .image {
+        height: 150px;
+        width: 150px;
+    }
+    #page1 .knowledge h1 {
+        width: 100px;
+        font-size: 20px;
+    }
+    #page1 .mid .knowledge button{
+        width: 112px;
+    }
 }
