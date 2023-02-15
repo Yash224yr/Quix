@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 #page1 {
@@ -20,7 +21,8 @@
 .header .user button {
     height: 37px;
     width: 107px;
-    background-color: black;
+    font-size: 16px;
+    background-color: darkred;
     color: white;
     cursor: pointer;
 }
@@ -82,7 +84,8 @@
 }
 
 #page1 .username input {
-    height: 31px;
+    font-size: 27px;
+    height: 40px;
     width: 222px;
 }
 
@@ -218,7 +221,7 @@
     display: inline-block;
     height: 52px;
     width: 420px;
-    padding: 13px 0;
+    padding: 7px 0;
     border-radius: 20px;
 }
 
@@ -228,16 +231,16 @@
     display: inline-block;
     height: 52px;
     width: 420px;
-    padding: 13px 0;
+    padding: 7px 0;
     border-radius: 20px;
 }
-#page2 .mid label:last-of-type{
+#page2 .mid  label:last-of-type{
     background-color: peru;
     color: white;
     display: inline-block;
     height: 52px;
     width: 420px;
-    padding: 13px 0;
+    padding: 7px 0;
     border-radius: 20px;
 }
 
@@ -245,31 +248,37 @@
     display: none;
     height: 100vh;
     /* justify-content: center; */
-    background-color: yellow;
+    background: linear-gradient(to right, #c31432, #240b36);
     flex-direction: column;
     align-items: center;
 }
 
 #page3 .header p {
     background-color: white;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     font-size: 31px;
     text-align: center;
     border-radius: 50%;
-    padding: 5px 0
+    padding: 7px 0
+}
+#page3 .header h1{
+    color: antiquewhite;
 }
 
 #page3 .ques {
     height: 80vh;
-    background-color: white;
+   background-color: bisque;
     width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+#page3 .ques h2{
+    width: 500px;
+    text-align: center;
+}
 #page3 .result {
     display: none;
     height: 73vh;
@@ -336,4 +345,54 @@
     background-color: red;
     color: white;
     cursor: pointer;
+}
+#page3 .ques ul{
+    list-style: none;
+    margin: 11px 0;
+    font-size: 30px
+}
+#page3 .ques label{
+    cursor: pointer;
+}
+#page3 .ques button{
+    height: 41px;
+    width: 114px;
+    background-color: black;
+    color: white;
+    border-radius: 21px;
+    border: 2px solid forestgreen;
+    cursor: pointer;
+}
+#page3 .result{
+    background-color: plum;
+}
+#page3 .show button:first-of-type{
+    height: 41px;
+    width: 114px;
+    background-color: black;
+    color: white;
+    border-radius: 21px;
+    cursor: pointer;
+    font-size: 15px;
+}
+#page3 .show button:nth-of-type(2){
+    height: 41px;
+    width: 114px;
+    background-color: blue;
+    color: white;
+    border-radius: 21px;
+    cursor: pointer;
+    font-size: 15px;
+}
+#page3 .show button:last-of-type{
+    height: 41px;
+    width: 114px;
+    background-color: red;
+    color: white;
+    border-radius: 21px;
+    cursor: pointer;
+    font-size: 15px;
+}
+#page3 .show{
+    margin-top: 20px;
 }

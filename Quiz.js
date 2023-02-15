@@ -156,7 +156,7 @@ const musicquiz = [
         ans: "ans1",
     },
     {
-        question: " Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+        question: "Which of the followinf instrument is also known as Bheri ?",
         a: "Pungi",
         b: "Bankiya",
         c: "Bhungal",
@@ -164,7 +164,7 @@ const musicquiz = [
         ans: "ans3",
     },
     {
-        question: " Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+        question: "Which song is very famous among the farmers of Kashmir region ?",
         a: "Nend Baith",
         b: "Ladishah",
         c: "Surma",
@@ -172,7 +172,7 @@ const musicquiz = [
         ans: "ans1",
     },
     {
-        question: " Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+        question: "Ustad Vilayat Khan, one of the great musicians from India, is globally renowned for playing which of the follwing instruments ?",
         a: "Sitar",
         b: "Sarod",
         c: "Tanpura",
@@ -180,7 +180,7 @@ const musicquiz = [
         ans: "ans1",
     },
     {
-        question: " Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+        question: " Which of the following is a form of popular folk music from uttar Pradesh ?",
         a: "Rasiya Geet",
         b: "Basant Geet",
         c: "Chhakri Geet",
@@ -368,7 +368,14 @@ scorecard.onclick = (e) => {
     e.preventDefault()
     document.querySelector("#page2 .mid").style.display = "none"
     scorediv.style.display = "flex"
-    topic.innerHTML = sessionStorage.getItem("topic")
-    scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
+    if(sessionStorage.getItem("topic")){
+        topic.innerHTML = sessionStorage.getItem("topic")
+    }
+    if(sessionStorage.getItem("score")){
+        scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
+    }
+    if(sessionStorage.getItem("time")){
     timedone.innerHTML = sessionStorage.getItem("time") + " seconds"
+
+    }
 }
