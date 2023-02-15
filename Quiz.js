@@ -303,10 +303,9 @@ submit.addEventListener("click", (event) => {
         diselectall()
         questioncount++
         shownextquestion()
-       
         stop()
         if (time.innerHTML >= 0) {
-            time.innerHTML = 15
+            time.innerHTML = "15"
             timer()
         }
     }
@@ -360,8 +359,10 @@ function diselectoption() {
     })
 }
 
+let timeend = null;
+
 function timer() {
-    let stop = setInterval(() => {
+    timeend = setInterval(() => {
         if (questioncount < 5) {
             if (time.innerHTML <= 0) {
                 questioncount++
@@ -400,10 +401,10 @@ function timer() {
         }
         else {
             time.innerHTML = "0"
-            clearInterval(stop)
+            stop()
         }
 
-    }, 1000)
+    },1000)
 
 }
 
@@ -436,7 +437,7 @@ home.onclick = () => {
     diselectoption()
 }
 function stop() {
-    clearInterval(stop)
+    clearInterval(timeend)
 }
 
 
