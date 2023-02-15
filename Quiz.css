@@ -185,8 +185,12 @@
 
 #page2 .mid h1 {
     margin-top: 20px;
+    color: darkred;
 }
-
+#page2 .mid h2{
+    margin: 31px;
+    font-size: 40px
+}
 #page2 .mid button {
     height: 42px;
     width: 152px;
@@ -204,6 +208,37 @@
 
 #page2 .mid label {
     cursor: pointer;
+    font-size: 27px;
+    margin-top: 20px;
+}
+
+#page2 .mid label:first-of-type{
+    background-color: blue;
+    color: white;
+    display: inline-block;
+    height: 52px;
+    width: 420px;
+    padding: 13px 0;
+    border-radius: 20px;
+}
+
+#page2 .mid label:nth-of-type(2){
+    background-color: palevioletred;
+    color: white;
+    display: inline-block;
+    height: 52px;
+    width: 420px;
+    padding: 13px 0;
+    border-radius: 20px;
+}
+#page2 .mid label:last-of-type{
+    background-color: peru;
+    color: white;
+    display: inline-block;
+    height: 52px;
+    width: 420px;
+    padding: 13px 0;
+    border-radius: 20px;
 }
 
 #page3 {
@@ -272,6 +307,13 @@
     padding: 15px 100px;
 }
 
+#page2 .logout  button{
+    height: 31px;
+    width: 78px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
 #page2 .yourdata .scorecard {
     display: flex;
 }

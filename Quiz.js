@@ -10,16 +10,22 @@ let take = document.querySelector(".take")
 let ankor = document.querySelectorAll(".mid a")
 let page2 = document.querySelector("#page2")
 let logout = document.querySelector(".logout")
+let logout1 = document.querySelector("#page2 .logout button")
 
 function checkusername() {
     if (sessionStorage.getItem("user")) {
         user.style.display = "none"
         head.innerHTML = sessionStorage.getItem("user")
         logout.style.display = "block"
+
     }
 }
 
 logout.onclick = () => {
+    deleteall()
+    location.reload()
+}
+logout1.onclick = () => {
     deleteall()
     location.reload()
 }
@@ -55,13 +61,13 @@ quit.onclick = () => {
 
 }
 start.onclick = () => {
-    if (input.value.length === 0) {
-        alert("Please create Your Username")
+    if (sessionStorage.getItem("user")) {
+        document.querySelector("#page1").style.display = "none"
+        document.querySelector("#page2").style.display = "block"
+        document.querySelector("#page2 .save h1").innerHTML = sessionStorage.getItem("user")
     }
-    else{
-    document.querySelector("#page1").style.display = "none"
-    document.querySelector("#page2").style.display = "block"
-    document.querySelector("#page2 .save h1").innerHTML = sessionStorage.getItem("user")
+    else {
+        alert("Enter Your Username First")
     }
 }
 
@@ -198,7 +204,7 @@ const modernartquiz = [
         b: "Shape",
         c: "Form",
         d: "Line",
-        ans:"ans1",
+        ans: "ans1",
     },
     {
         question: "What unusual pair of names have modern British artists Michael Baldwin and Mel Ramsden taken?",
@@ -311,7 +317,6 @@ submit.addEventListener("click", () => {
             document.querySelector("#page3 .result").style.display = "flex"
         }
     }
-
 })
 
 function diselectall() {
