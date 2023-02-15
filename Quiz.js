@@ -40,7 +40,6 @@ checkusername()
 
 user.onclick = () => {
     take.style.display = "block"
-
 }
 create.onclick = () => {
     if (input.value.length === 0) {
@@ -324,6 +323,12 @@ function diselectall() {
         currentans.checked = false;
     })
 }
+function diselectoption(){
+    let allinpt = document.querySelectorAll("#page2 .mid input")
+    allinpt.forEach((curren)=>{
+        curren.checked=false;
+    })
+}
 
 function timer() {
     let stop = setInterval(() => {
@@ -361,6 +366,7 @@ getresult.onclick = () => {
 home.onclick = () => {
     page2.style.display = "block"
     page3.style.display = "none"
+    diselectoption()
 }
 
 
