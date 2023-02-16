@@ -298,24 +298,24 @@ submit.addEventListener("click", (event) => {
 
 
     if (isChecked === true) {
-        if (sessionStorage.getItem("topic") === "Coding"){
+        if (sessionStorage.getItem("topic") === "Coding") {
             if (clickans === quiz[questioncount].ans) {
                 score++
-                sessionStorage.setItem("score",score)
+                sessionStorage.setItem("score", score)
             }
         }
-        
-        if (sessionStorage.getItem("topic") === "Modern Art"){
+
+        if (sessionStorage.getItem("topic") === "Modern Art") {
             if (clickans === modernartquiz[questioncount].ans) {
                 score++
-                sessionStorage.setItem("score",score)
+                sessionStorage.setItem("score", score)
             }
         }
-     
-        if (sessionStorage.getItem("topic") === "Music"){
+
+        if (sessionStorage.getItem("topic") === "Music") {
             if (clickans === musicquiz[questioncount].ans) {
                 score++
-                sessionStorage.setItem("score",score)
+                sessionStorage.setItem("score", score)
             }
         }
 
@@ -385,6 +385,7 @@ function timer() {
             if (time.innerHTML <= 0) {
                 questioncount++
                 time.innerHTML = "15"
+                diselectall()
                 if (sessionStorage.getItem("topic") === "Music") {
                     if (questioncount < musicquiz.length) {
                         loadquestion1()
@@ -467,7 +468,16 @@ scorecard.onclick = (e) => {
         topic.innerHTML = sessionStorage.getItem("topic")
     }
     if (sessionStorage.getItem("score")) {
-        scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
+        // scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
+
+        let localstoragecontent = sessionStorage.getItem("savedscore")
+        if(localstoragecontent===null){
+            let value = []
+        }
+        else{
+
+        }
+
     }
     else {
         scoredone.innerHTML = "0 out Of 5"
