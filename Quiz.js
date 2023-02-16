@@ -468,15 +468,15 @@ scorecard.onclick = (e) => {
         topic.innerHTML = sessionStorage.getItem("topic")
     }
     if (sessionStorage.getItem("score")) {
-        // scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
+        scoredone.innerHTML = sessionStorage.getItem("score") + " Out of 5"
 
-        let localstoragecontent = sessionStorage.getItem("savedscore")
-        if(localstoragecontent===null){
-            let value = []
-        }
-        else{
+        // let localstoragecontent = sessionStorage.getItem("savedscore")
+        // if(localstoragecontent===null){
+        //     let value = []
+        // }
+        // else{
 
-        }
+        // }
 
     }
     else {
