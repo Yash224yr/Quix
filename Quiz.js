@@ -76,7 +76,7 @@ form.addEventListener("submit", function (e) {
     sessionStorage.setItem("topic", selectedOption)
     const currentDate = new Date();
     const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
-    sessionStorage.setItem("date",formattedDate)
+    sessionStorage.setItem("date", formattedDate)
     if (selectedOption === "Music") {
         page2.style.display = "none"
         page3.style.display = "flex"
@@ -293,16 +293,32 @@ submit.addEventListener("click", (event) => {
         if (radios[i].checked) {
             isChecked = true;
             break;
-
         }
     }
 
 
     if (isChecked === true) {
-        if (clickans === quiz[questioncount].ans) {
-            score++
-            sessionStorage.setItem("score", score)
+        if (sessionStorage.getItem("topic") === "Coding"){
+            if (clickans === quiz[questioncount].ans) {
+                score++
+                sessionStorage.setItem("score",score)
+            }
         }
+        
+        if (sessionStorage.getItem("topic") === "Modern Art"){
+            if (clickans === modernartquiz[questioncount].ans) {
+                score++
+                sessionStorage.setItem("score",score)
+            }
+        }
+     
+        if (sessionStorage.getItem("topic") === "Music"){
+            if (clickans === musicquiz[questioncount].ans) {
+                score++
+                sessionStorage.setItem("score",score)
+            }
+        }
+
         diselectall()
         questioncount++
         shownextquestion()
@@ -315,7 +331,6 @@ submit.addEventListener("click", (event) => {
     else {
         swal("Oops!", "Select Any First", "error");
     }
-
 
     function shownextquestion() {
         if (sessionStorage.getItem("topic") === "Music") {
@@ -457,6 +472,5 @@ scorecard.onclick = (e) => {
     else {
         scoredone.innerHTML = "0 out Of 5"
     }
-    timedone.innerHTML= sessionStorage.getItem("date")
+    timedone.innerHTML = sessionStorage.getItem("date")
 }
-
